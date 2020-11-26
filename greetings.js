@@ -3,7 +3,15 @@ const form = document.querySelector(".js-form"),
   greeting = document.querySelector(".js-greetings");
 
 const USER_LS = "currentUser",
-  SHOWING_CN = "showing";
+  SHOWING_CN = "showing",
+  GREETING_LIST = [
+    "Hey there,",
+    "How's it going,",
+    "Another beautiful day,",
+    "Keep on going,",
+    "You can do anything,",
+    "Keep it up,",
+  ];
 
 function saveName(text) {
   localStorage.setItem(USER_LS, text);
@@ -21,10 +29,21 @@ function askForName() {
   form.addEventListener("submit", handleSubmit);
 }
 
+function genRandom() {
+  const randomInt = Math.floor(Math.random() * GREETING_LIST.length);
+  return randomInt;
+}
+
+function randomGreeting() {
+  const int = genRandom();
+  return GREETING_LIST[int];
+}
+
 function paintGreeting(text) {
   form.classList.remove(SHOWING_CN);
   greeting.classList.add(SHOWING_CN);
-  greeting.innerText = `Hey there, ${text}`;
+  const greetingText = randomGreeting();
+  greeting.innerText = `${greetingText} ${text}`;
 }
 
 function loadName() {
