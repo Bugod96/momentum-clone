@@ -3,39 +3,62 @@
   <head>
     <meta charset="utf-8" />
     <title>Keep On Going</title>
-    <link rel="shortcut icon" size="16x16" href="images/Keep-On-Going-Wallpaper-square.jpg"/>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" size="16x16" href="sources/shortcut-icon.jpg"/>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
-
   <body>
-    <div class="splash-screen">
-      <div>
-        <img src="images/HeyThereHandsome.jpg" alt="flirting baby">
-        <span>Hey there, Handsome</span>
-      </div>
-    </div>
+    <header>
+      <button class="js-popbutton">POP</button>
+      <button class="js-settings"><i class="fas fa-cog"></i></button>
+    </header>
     <main>
       <div class="js-clock">
         <h1>00:00</h1>
       </div>
       <h4 class="js-greetings greetings"><h4>
       <form class="js-form form">
-        <input type="text" placeholder="What is your name?" />
+          <input type="text" placeholder="What is your name?" />
       </form>
       <form class="js-toDoForm">
-        <input type="text" placeholder="Add a Task"/>
+          <input type="text" placeholder="Add a Task"/>
       </form>
-      <ul class="js-toDoList">
-      </ul>
+      <ul class="js-toDoList"></ul>
       <span class="js-weather"></span>
       <span class="js-air"></span>
     </main>
-
-    <script src="clock.js"></script>
-    <script src="greetings.js"></script>
-    <script src="todo.js"></script>
-    <script src="background.js"></script>
-    <script src="weather.js"></script>
-    <script src="air.js"></script>
+    <div class="settingsPanel hidePanel"> 
+      <div class="settingsPanel__container">
+        <button class="settingsPanel__exitBtn js-exitBtn">❌</button>
+        <ul>
+          <li>
+            <span class="settingsPanel__title">Change Time Mode: </span> 
+            <button class="js-timeModeButton">24hr</button>
+          </li>
+          <li>
+            <span class="settingsPanel__title">Change Username: </span> 
+            <form class="js-changeNameForm">
+              <input type="text" placeholder="What is your name?" />
+          </li>
+          <li>
+            <span class="settingsPanel__title">Delete All the ToDos: </span> 
+            <button class="js-deleteAllToDosBtn">Clean</button>
+          </li>  
+          <li>
+            <span class="settingsPanel__title">Edit Greetings: </span> 
+            <button>Clean</button>
+          </li>  
+        </ul>
+      </div>
+    </div>
+    <div class="popcatBox">
+      <img class="js-popcat" src="https://cdn140.picsart.com/344990482042211.png?type=webp&to=min&r=640" >
+    <div>
+    <script src="js/clock.js"></script>
+    <script src="js/greetings.js"></script>
+    <script src="js/todo.js"></script> 
+    <script src="js/weather.js"></script>
+    <script src="js/popcat.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
   </body>
 </html>

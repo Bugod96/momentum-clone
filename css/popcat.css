@@ -1,0 +1,45 @@
+.popcatBox {
+  position: fixed;
+  bottom: -600px;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.popcatBox img {
+  width: 300px;
+}
+.popcatBox .reverse {
+  transform: scaleX(-1);
+}
+
+@keyframes popupAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  1% {
+    transform: scaleX(-1);
+  }
+  100% {
+    transform: translateY(-600px) scaleX(-1);
+  }
+}
+.popup {
+  animation: popupAnimation 3s ease-in forwards;
+}
+
+@keyframes popdownAnimation {
+  0% {
+    transform: translateY(-600px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.popdown {
+  animation: popdownAnimation 3s ease-in forwards;
+}
+
+.hidden {
+  visibility: hidden;
+}
