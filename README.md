@@ -2,8 +2,10 @@
 
 Clone coding of momentum, a simple chrome extention
 
-- 12hr/24hr switch button
-- popcat
-- auto-updating daily to-do
-- music system
-- reset button
+- summon a popcat
+- settings panel
+- edit username
+- edit greetings
+- clean all todos
+- 12hr/24hr mode change
+- prevent form submit

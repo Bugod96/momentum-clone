@@ -2,50 +2,80 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Keep On Going</title>
+    <title>What To Do</title>
     <link rel="shortcut icon" size="16x16" href="sources/shortcut-icon.jpg"/>
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <header>
-      <button class="js-popbutton">POP</button>
-      <button class="js-settings"><i class="fas fa-cog"></i></button>
+      <span class="js-weather weather"></span> 
+      <div></div>
+      <div>
+        <button class="js-popbutton">POP</button>
+        <button class="js-settings"><i class="fas fa-cog"></i></button>
+      </div>
     </header>
     <main>
-      <div class="js-clock">
-        <h1>00:00</h1>
-      </div>
-      <h4 class="js-greetings greetings"><h4>
-      <form class="js-form form">
+      <section>
+      <article class="first-article">
+        <div class="js-clock">
+          <h1 class="clock">00:00</h1>
+        </div> 
+        <form class="js-form nameForm">
           <input type="text" placeholder="What is your name?" />
-      </form>
-      <form class="js-toDoForm">
+        </form>
+        <span class="js-greetings greetings"><span>
+      </article>
+      <article class="second-article">   
+        <form class="js-toDoForm todoForm">
           <input type="text" placeholder="Add a Task"/>
-      </form>
-      <ul class="js-toDoList"></ul>
-      <span class="js-weather"></span>
-      <span class="js-air"></span>
+        </form>
+        <ul class="js-toDoList toDoList"></ul>
+      </article>
+    </section>
     </main>
     <div class="settingsPanel hidePanel"> 
       <div class="settingsPanel__container">
         <button class="settingsPanel__exitBtn js-exitBtn">❌</button>
-        <ul>
-          <li>
-            <span class="settingsPanel__title">Change Time Mode: </span> 
-            <button class="js-timeModeButton">24hr</button>
-          </li>
-          <li>
-            <span class="settingsPanel__title">Change Username: </span> 
+        <h1 class="settingsPanel__title">Settings</h1> 
+        <ul class="settingsPanel__settings">
+          <li class="settingsPanel__setting1">
+            <div class="settingsPanel__setting-title">Username </div> 
+            <div class="settingsPanel__setting-description">How should I address you?</div>
             <form class="js-changeNameForm">
-              <input type="text" placeholder="What is your name?" />
+              <input type="text" placeholder="My name is ..." />
+              <input type="submit" value="Change Username"/>
+              </form>
           </li>
-          <li>
-            <span class="settingsPanel__title">Delete All the ToDos: </span> 
-            <button class="js-deleteAllToDosBtn">Clean</button>
-          </li>  
-          <li>
-            <span class="settingsPanel__title">Edit Greetings: </span> 
-            <button>Clean</button>
+          <li class="settingsPanel__setting2">
+            <div class="settingsPanel__setting-title">Greetings</div> 
+            <div class="settingsPanel__setting-description">What do you want to hear from me?</div>
+            <form class="js-addGreetingForm">
+              <input type="text" placeholder="Hello! "/>
+              <input type="submit" value="Add a New Greeting"/>
+            </form>
+            <ul class="js-greetingsList greetingsList"></ul>
+            <li class="settingsPanel__setting3">
+              <div class="settingsPanel__setting-title">Time Format</div> 
+              <div class="settingsPanel__setting-description">Change the time format.</div>
+              <div class="settingsPanel__setting-container">
+                <div class="settingsPanel__setting-grid">
+                  <div>ex)</div>
+                  <div>
+                    <div>24hr: 13:50:50</div>
+                    <div>12hr: 01:50:50 PM</div>
+                  </div>
+                </div>
+                <button class="js-timeModeButton">24hr</button>
+              </div>
+            </li>
+            <li class="settingsPanel__setting4">
+              <div class="settingsPanel__setting-title">Reset To-Dos</div>
+              <div class="settingsPanel__setting-container"> 
+                <div class="settingsPanel__setting-description">Clicking the button on the right will erase all the to-dos you have created.</div>
+                <button class="js-deleteAllToDosBtn">Clean</button>
+              </div>
+            </li>  
           </li>  
         </ul>
       </div>

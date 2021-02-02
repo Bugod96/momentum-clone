@@ -8,7 +8,8 @@ const TODOS_LS = "toDos";
 let idNumbers = 1;
 let toDos = []; // 새로운 배열 cleanToDos를 대입할 수 있도록 const가 아니라 let으로 변경.
 
-const deleteAllTodos = () => {
+const deleteAllTodos = (event) => {
+  event.preventDefault();
   toDos = [];
   saveToDos();
   window.location.reload();
@@ -37,7 +38,7 @@ const paintToDo = (text) => {
   const span = document.createElement("span");
   const newId = idNumbers;
   idNumbers += 1;
-  delBtn.innerHTML = "❌"; // 버튼에 들어가는 내용.
+  delBtn.innerHTML = "✔"; // 버튼에 들어가는 내용.
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = `${text} `; // 버튼 사이에 공백 추가 // 매개변수 text에 입력된 인자값(=input에 submit되는 내용)을 span 태그에 추가.
   list.appendChild(span); // li 태그 내부에 자식 태그로써 span 태그 & button 태그 추가.
@@ -54,6 +55,9 @@ const paintToDo = (text) => {
 
 const onToDoSubmit = (event) => {
   event.preventDefault();
+  if (toDoInput.value === "") {
+    return;
+  }
   const currentValue = toDoInput.value;
   paintToDo(currentValue);
   toDoInput.value = ""; // clear 기능: submit을 하면 입력한 내용이 사라지도록

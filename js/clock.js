@@ -14,13 +14,13 @@ const hourFormat = (fullhour) => {
   } else {
     if (fullhour >= 13) {
       hours = fullhour - 12; // const 혹은 let으로 변수 선언시 에러 발생. 원인 불명.
-      day_night = "오후";
+      day_night = "PM";
     } else if (fullhour == 0) {
       hours = 12; // I made it show 오전 12:00 & 오후 12:00 instead of 0:00 AM & 0:00 PM. 개인 취향.
-      day_night = "오전";
+      day_night = "AM";
     } else {
       hours = fullhour;
-      day_night = "오전";
+      day_night = "AM";
     }
   }
   return { hours, day_night };
@@ -32,9 +32,9 @@ const getTime = () => {
     fullhour = date.getHours(),
     seconds = date.getSeconds();
   const { hours, day_night } = hourFormat(fullhour);
-  clockTitle.innerText = `${day_night} ${hours < 10 ? `0${hours}` : hours}:${
+  clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${
     minutes < 10 ? `0${minutes}` : minutes
-  }:${seconds < 10 ? `0${seconds}` : seconds}`;
+  }:${seconds < 10 ? `0${seconds}` : seconds} ${day_night}`;
 };
 
 const onModeClick = () => {
