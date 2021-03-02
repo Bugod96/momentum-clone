@@ -1,10 +1,11 @@
 const popbutton = document.querySelector(".js-popbutton");
 const popbox = document.querySelector(".popcatBox");
 const popcat = document.querySelector(".js-popcat");
-const closedPic =
-  "https://cdn140.picsart.com/344990482042211.png?type=webp&to=min&r=640";
-const openPic =
-  "https://cdn140.picsart.com/345048830031211.png?type=webp&to=min&r=640";
+
+const BASEURI = popcat.baseURI.replace("/index.html", "/");
+
+const CLOSEDPIC = `${BASEURI}sources/closed.webp`;
+const OPENPIC = `${BASEURI}sources/open.webp`;
 
 let audio;
 let counter = 0;
@@ -20,8 +21,8 @@ const onPopButtonClick = () => {
   } else {
     popbutton.innerText = "POP";
   }
-  if (popcat.src === openPic) {
-    popcat.src = closedPic;
+  if (popcat.src === OPENPIC) {
+    popcat.src = CLOSEDPIC;
     popcat.classList.toggle("reverse"); // bug fix
   }
   popbutton.classList.add("hidden");
@@ -34,11 +35,12 @@ const onCatClick = () => {
   audio = new Audio();
   audio.src = "sources/pop-sound.flac";
   popcat.classList.toggle("reverse");
-  if (popcat.src === closedPic) {
-    popcat.src = openPic;
+  console.dir(popcat);
+  if (popcat.src === CLOSEDPIC) {
+    popcat.src = OPENPIC;
     audio.play();
   } else {
-    popcat.src = closedPic;
+    popcat.src = CLOSEDPIC;
   }
 };
 
