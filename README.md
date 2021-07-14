@@ -2,7 +2,7 @@
 
 Clone coding of momentum, a simple chrome extention
 
-- summon a popcat
+- summon a popcat with the POP button and click on it
 - settings panel
 - edit username
 - edit greetings
